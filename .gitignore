@@ -1,3 +1,6 @@
+of_v0.11.2_linux64gcc6_release/
+*.tar
+
 # binaries
 cube1/cube1
 freeglut/fg-cube
