@@ -1,3 +1,27 @@
+# binaries
+cube1/cube1
+freeglut/fg-cube
+spinning-cube/Cube
+
+aclocal/
+aclocal.m4
+autom4te.cache/
+autoscan.log
+compile
+config/
+config.h.in
+config.h.in~
+config.log
+config.status
+configure
+configure~
+configure.scan
+install-sh
+Makefile
+Makefile.in
+missing
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
