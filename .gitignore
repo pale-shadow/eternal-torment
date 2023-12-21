@@ -23,6 +23,8 @@ install-sh
 Makefile
 Makefile.in
 missing
+config.h
+stamp-h1
 
 
 # Byte-compiled / optimized / DLL files
