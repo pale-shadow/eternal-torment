@@ -35,7 +35,7 @@ AC_CHECK_FUNCS([memset])
 AC_CONFIG_FILES([SpinningCube/Makefile
                  cube1/Makefile
                  freeglut/Makefile
-                 spinning-cube/Makefile])
+])
 
 AM_INIT_AUTOMAKE(foreign)
 

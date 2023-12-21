@@ -1,0 +1,35 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: bootstrap
+      run: ./bootstrap.sh
+    - name: configure
+      run: ./configure
+    - name: make SpinningCube
+      working-directory: SpinningCube
+      run: |
+       sudo apt-get -y install freeglut3 freeglut3-dev libglew-dev
+       sudo apt-get -y install mesa-utils
+       make all
+    - name: make cube1
+      working-directory: cube1
+      run: |
+       make
+    - name: make freeglut
+      working-directory: freeglut
+      run: |
+       sudo apt-get -y install freeglut3 freeglut3-dev libglew-dev
+       sudo apt-get -y install mesa-utils
+       make all
