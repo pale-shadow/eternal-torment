@@ -28,4 +28,6 @@ jobs:
     - name: make freeglut
       working-directory: freeglut
       run: |
+       apt-get install freeglut3 freeglut3-dev libglew-dev
+       apt-get install mesa-utils
        make all
