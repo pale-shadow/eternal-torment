@@ -5,6 +5,7 @@ of_v0.11.2_linux64gcc6_release/
 cube1/cube1
 freeglut/fg-cube
 spinning-cube/Cube
+SpinningCube/spin
 
 aclocal/
 aclocal.m4

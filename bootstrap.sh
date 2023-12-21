@@ -10,7 +10,7 @@
 # v0.2 09/24/2022 Update this script
 # v0.3 10/19/2022 Add tool functions
 # v0.4 11/10/2022 Add automake check
-# v0.5 11/15/2022 Handle Docker container builds
+# v0.5 11.16.5/2022 Handle Docker container builds
 # v0.6 07/13/2023 Add required_files and OpenBSD support
 
 set -eu
@@ -118,7 +118,7 @@ function run_aclocal() {
     #aclocal -I m4 $ACLOCAL_FLAGS || exit 1
     aclocal -I config || exit 1
   else
-    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.15 aclocal -I config || exit 1
+    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.16.5 aclocal -I config || exit 1
   fi
   echo -e "${CYAN}.. done with aclocal.${NC}"
 }
@@ -143,7 +143,7 @@ function run_automake() {
     automake -a -c --add-missing || exit 1
     #automake --force --copy --add-missing || exit 1
   else
-    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.15 automake -a -c --add-missing || exit 1
+    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.16.5 automake -a -c --add-missing || exit 1
   fi
   echo "... done with automake."
 }
@@ -159,7 +159,7 @@ function run_autoconf() {
     # this is for OpenBSD systems
     ac_ver="2.71"
     echo "Running autoconf..."
-    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.15 autoreconf -i || exit 1
+    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.16.5 autoreconf -i || exit 1
   fi
   echo "... done with autoconf."
 }
