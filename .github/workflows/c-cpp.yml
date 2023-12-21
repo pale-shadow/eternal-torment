@@ -20,8 +20,8 @@ jobs:
     - name: make SpinningCube
       working-directory: SpinningCube
       run: |
-       apt-get install freeglut3 freeglut3-dev libglew-dev
-       apt-get install mesa-utils
+       sudo apt-get -y install freeglut3 freeglut3-dev libglew-dev
+       sudo apt-get -y install mesa-utils
        make all
     - name: make cube1
       working-directory: cube1
@@ -30,6 +30,6 @@ jobs:
     - name: make freeglut
       working-directory: freeglut
       run: |
-       apt-get install freeglut3 freeglut3-dev libglew-dev
-       apt-get install mesa-utils
+       sudo apt-get -y install freeglut3 freeglut3-dev libglew-dev
+       sudo apt-get -y install mesa-utils
        make all
