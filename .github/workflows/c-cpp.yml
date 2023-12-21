@@ -17,7 +17,15 @@ jobs:
       run: ./bootstrap.sh
     - name: configure
       run: ./configure
-    - name: make
-      run: make
-    - name: make clean
-      run: make clean
+    - name: make SpinningCube
+      working-directory: SpinningCube
+      run: |
+       make
+    - name: make cube1
+      working-directory: cube1
+      run: |
+       make
+    - name: make freeglut
+      working-directory: freeglut
+      run: |
+       make all
