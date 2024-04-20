@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cell'
 
 class Grid
@@ -5,7 +7,7 @@ class Grid
 
   def initialize(rows, columns)
     @rows = rows
-    @colummsn = columns
+    @columns = columns
     @grid = prepare_grid
     configure_cells
   end
@@ -20,11 +22,32 @@ class Grid
 
   def configure_cells
     each_cell do |cell|
-      row, col = cell.row, cell.column
+      row = cell.row
+      col = cell.column
       cell.north = self[row - 1, col]
-      cell.south = self[row + 1, col] 
+      cell.south = self[row + 1, col]
       cell.west = self[row, col - 1]
       cell.east = self[row, col + 1]
+    end
+  end
+end
+
+def [](row, column)
+  return nil unless row.between?(0, @rows - 1)
+
+  return nil unless column.between?(0, @grid[row].count - 1)
+
+  @grid[row][column]
+end
+
+def each_row(&block)
+  @grid.each(&block)
+end
+
+def each_cell
+  each_row do |row|
+    row.each do |cell|
+      yield cell if cell
     end
   end
 end

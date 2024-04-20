@@ -1,8 +1,8 @@
-class BinaryTree
+# frozen_string_literal: true
 
+class BinaryTree
   def self.on(grid)
     grid.each cell do |cell|
-      neighboars = []
       neighbors << cell.north if cell.north
       neighbors << cell.east if cell.east
 
@@ -14,4 +14,3 @@ class BinaryTree
     grid
   end
 end
-     

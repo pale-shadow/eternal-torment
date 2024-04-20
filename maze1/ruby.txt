@@ -1,11 +1,11 @@
 ```sh
 WARNING:  You don't have /usr/ports/pobj/xdg-2.2.5-ruby32/gem-tmp/.gem/ruby/3.2/bin in your PATH,
           gem executables will not run.
-
 ```
 
-
 ```sh
+doas gem32 install rubocop --no-ri --no-rdoc
+rubocop32 -A *.rb
 > ~  which ruby32                                                                                                      16:24:44
 /usr/local/bin/ruby32
 > ~  ruby32 -v                                                                                                         16:24:47

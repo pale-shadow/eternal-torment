@@ -1,21 +1,24 @@
+# frozen_string_literal: true
+
 class Cell
   attr_reader :row, :column
-  arrt_accessor :north, :south, :east, :west
+  attr_accessor :north, :south, :east, :west
 
-  def initialize(row, cloumn)
-    @row, @column = row, column
+  def initialize(row, _cloumn)
+    @row = row
+    @column = column
     @links = ()
   end
 
-  def link(cell, bidi=true)
-    @links(cell) = true
-    cell, link(self, false) if bidi
+  def link(cell, bidi: true)
+    @links[cell] = true
+    cell.link(self, false) if bidi
     self
   end
- 
-  def unlink(cell, bidi=true)
+
+  def unlink(cell, bidi: true)
     @links.delete(cell)
-    cell.unlink(self,false) if bidi
+    cell.unlink(self, false) if bidi
     self
   end
 
@@ -28,13 +31,11 @@ class Cell
   end
 
   def neighbors
-    list = [] 
+    list = []
     list << north if north
     list << south if south
     list << east if east
     list << west if west
     list
   end
-
 end
-  
