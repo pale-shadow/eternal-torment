@@ -116,9 +116,10 @@ function run_aclocal() {
     
     echo -e "${CYAN}Running aclocal...${NC}"
     #aclocal -I m4 $ACLOCAL_FLAGS || exit 1
-    aclocal -I config || exit 1
+    #aclocal -I config || exit 1
+    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.16 aclocal -I config
   else
-    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.16.5 aclocal -I config || exit 1
+    aclocal -I config || exit 1
   fi
   echo -e "${CYAN}.. done with aclocal.${NC}"
 }
@@ -159,7 +160,7 @@ function run_autoconf() {
     # this is for OpenBSD systems
     ac_ver="2.71"
     echo "Running autoconf..."
-    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.16.5 autoreconf -i || exit 1
+    AUTOCONF_VERSION=2.71 AUTOMAKE_VERSION=1.16 autoreconf -i || exit 1
   fi
   echo "... done with autoconf."
 }
