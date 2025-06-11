@@ -32,7 +32,7 @@ AC_CHECK_HEADERS([unistd.h])
 # Checks for library functions.
 AC_CHECK_FUNCS([memset])
 
-AC_CONFIG_FILES([
+AC_CONFIG_FILES([SpinningCube/Makefile
                  cube1/Makefile
                  freeglut/Makefile
 ])
