@@ -20,8 +20,7 @@ jobs:
     - name: make SpinningCube
       working-directory: HAHAFUN/SpinningCube
       run: |
-       sudo apt-get -y install freeglut3 freeglut3-dev libglew-dev
-       sudo apt-get -y install mesa-utils
+       sudo apt-get -y install freeglut3-dev libglew-dev mesa-utils
        make all
     - name: make cube1
       working-directory: HAHAFUN/cube1
