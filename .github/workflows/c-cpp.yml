@@ -1,8 +1,6 @@
 name: C/C++ CI
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -20,15 +18,14 @@ jobs:
     - name: make SpinningCube
       working-directory: HAHAFUN/SpinningCube
       run: |
-       sudo apt-get -y install libglew-dev mesa-utils freeglut freeglut3-dev
+       sudo apt-get -y install libglew-dev mesa-utils
        make all
     - name: make cube1
       working-directory: HAHAFUN/cube1
       run: |
        make
-    - name: make freeglut
-      working-directory: HAHAFUN/freeglut
-      run: |
-       sudo apt-get -y install freeglut3 freeglut3-dev libglew-dev
-       sudo apt-get -y install mesa-utils
-       make all
+    # - name: make freeglut
+    #   working-directory: HAHAFUN/freeglut
+    #   run: |
+    #    sudo apt-get -y install freeglut3 freeglut3-dev libglew-dev mesa-utils
+    #    make all
