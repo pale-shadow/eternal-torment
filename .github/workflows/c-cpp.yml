@@ -18,17 +18,17 @@ jobs:
     - name: configure
       run: ./configure
     - name: make SpinningCube
-      working-directory: SpinningCube
+      working-directory: HAHAFUN/SpinningCube
       run: |
        sudo apt-get -y install freeglut3 freeglut3-dev libglew-dev
        sudo apt-get -y install mesa-utils
        make all
     - name: make cube1
-      working-directory: cube1
+      working-directory: HAHAFUN/cube1
       run: |
        make
     - name: make freeglut
-      working-directory: freeglut
+      working-directory: HAHAFUN/freeglut
       run: |
        sudo apt-get -y install freeglut3 freeglut3-dev libglew-dev
        sudo apt-get -y install mesa-utils
