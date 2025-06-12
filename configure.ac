@@ -35,6 +35,7 @@ AC_CHECK_HEADERS([unistd.h])
 AC_CHECK_FUNCS([memset])
 
 AC_CONFIG_FILES([HAHAFUN/SpinningCube/Makefile
+		HAHAFUN/spinning-cube/Makefile
                  HAHAFUN/cube1/Makefile
                  HAHAFUN/freeglut/Makefile
 ])
