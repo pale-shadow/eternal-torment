@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.71])
-AC_INIT(lab-franklin, 0.2, franklin@bitsmasher.net, https://github.com/devsecfranklin/eternal-torment/issues)
+AC_INIT(lab-franklin, 0.2, franklin@bitsmasher.net, https://github.com/pale-shadow/eternal-torment/issues)
 
 dnl AC_CONFIG_SRCDIR([cube1])
 
@@ -35,9 +35,10 @@ AC_CHECK_HEADERS([unistd.h])
 AC_CHECK_FUNCS([memset])
 
 AC_CONFIG_FILES([HAHAFUN/SpinningCube/Makefile
-		HAHAFUN/spinning-cube/Makefile
-                 HAHAFUN/cube1/Makefile
-                 HAHAFUN/freeglut/Makefile
+	CODE/assembly/Makefile
+    HAHAFUN/spinning-cube/Makefile
+    HAHAFUN/cube1/Makefile
+    HAHAFUN/freeglut/Makefile
 ])
 
 AM_INIT_AUTOMAKE(foreign)
