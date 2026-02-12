@@ -1,0 +1,10 @@
+FROM alpine:latest
+
+WORKDIR /home/303
+
+RUN apk add --no-cache
+
+COPY files/ .
+
+CMD ["ash"]
+
