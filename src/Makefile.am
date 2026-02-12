@@ -2,9 +2,9 @@ AS = as
 LD = ld
 GDB = gdb
 
-SRC = program.s
-OBJ = program.o
-EXEC = program
+SRC = funk.s
+OBJ = ../build/funk.o
+EXEC = ../build/funk
 
 # Define assembly flags, including debug options
 # --gstabs includes stabs debugging symbols, compatible with GDB

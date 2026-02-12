@@ -1,7 +1,7 @@
 section .text
-global my_asm_function
+global funk
 
-my_asm_function:
+funk:
     ; Example function: add two integers
     mov eax, [esp + 4]
     add eax, [esp + 8]
