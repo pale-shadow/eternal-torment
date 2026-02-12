@@ -23,9 +23,6 @@
 #include	<GL/glut.h>
 #include	<math.h>
 
-/*
-** Function called to update rendering
-*/
 void		DisplayFunc(void)
 {
   static float alpha = 0;
@@ -138,5 +135,3 @@ int		main(int argc, char **argv)
   /* Never reached */
   return 0;
 }
-
-/* ========================================================================= */
