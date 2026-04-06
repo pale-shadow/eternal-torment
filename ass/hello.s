@@ -1,4 +1,4 @@
-.global _start
+.global main
 
 .section .data
 message:
@@ -6,7 +6,7 @@ message:
     .set message_len, . - message
 
 .section .text
-_start:
+main:
     /* Setup for 'write' system call */
     mov x0, #1              // File descriptor 1 (stdout)
     ldr x1, =message        // Pointer to the message
