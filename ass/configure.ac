@@ -1,7 +1,7 @@
 AC_PREREQ([2.71])
-AC_INIT([assemble], [0.1], [smoooth.y62wj@passmail.net], [https://github.com/devsecfranklin/eternal-torment])
+AC_INIT([ass], [0.1], [smoooth.y62wj@passmail.net], [https://github.com/devsecfranklin/eternal-torment])
 
-# REQUIRED: Populates $host_cpu for your AS_CASE check
+AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AC_CANONICAL_HOST
 
 AS_CASE([$host_cpu],
@@ -17,9 +17,11 @@ AS_CASE([$host_cpu],
 )
 
 AC_PROG_CC
-AC_PROG_AS
+AM_PROG_AS
 
-# just in case they run this on intel
+AC_CONFIG_FILES([Makefile])
+
+# just in case they have run this on intel
 AC_CHECK_PROG([HAVE_NASM], [nasm], [nasm])
 AC_CHECK_PROG([HAVE_YASM], [yasm], [yasm])
 
