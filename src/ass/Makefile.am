@@ -1,20 +1,9 @@
-FLASHOBJS = main.o
-FLASHMEMOBJS = mainmem.o
+# Define the resulting executable name 
+bin_PROGRAMS = hello
 
-ifdef DEBUG
-DEBUGFLGS = -g
-else
-DEBUGFLGS =
-endif
-LSTFLGS =
+hello_SOURCES = hello.s
+hello_LDFLAGS = -nostartfiles
 
-all: flash flashmem
+hello_LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
 
-%.o : %.s
-	as $(DEBUGFLGS) $(LSTFLGS) $< -o $@
-
-flash: $(FLASHOBJS)
-	ld -o flash $(FLASHOBJS)
-
-flashmem: $(FLASHMEMOBJS)
-	ld -o flashmem $(FLASHMEMOBJS)
+AM_CCASFLAGS = $(ASFLAGS)
