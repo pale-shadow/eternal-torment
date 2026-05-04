@@ -14,10 +14,12 @@ autom4te.cache/
 autoscan.log
 compile
 config/
+config.guess
 config.h.in
 config.h.in~
 config.log
 config.status
+config.sub
 configure
 configure~
 configure.scan
@@ -158,3 +160,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+*.o
+*.mod
+*.s.bak
+hello
+prog
+a.out
