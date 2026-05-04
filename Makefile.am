@@ -5,4 +5,3 @@ ACLOCAL_AMFLAGS = -I config/m4 -I aclocal
 
 clean:
 	rm HAHAFUNNY/*/Makefile.in HAHAFUNNY/*/Makefile
-
