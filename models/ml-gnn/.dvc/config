@@ -1,0 +1,2 @@
+['remote "dataset"']
+    url = gs://backend-datastore/dataset/

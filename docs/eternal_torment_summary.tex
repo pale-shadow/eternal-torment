@@ -1,0 +1,116 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+% Professional styling
+\definecolor{accentblue}{RGB}{30, 80, 150}
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
+\definecolor{codeblue}{RGB}{0, 0, 128}
+
+\titleformat{\section}{\large\bfseries\color{accentblue}}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{accentblue!30},
+    commentstyle=\color{gray},
+    keywordstyle=\color{codeblue},
+    showstringspaces=false
+}
+
+\title{
+    \textbf{Repository Summary: Eternal Torment}\\
+    \large \texttt{pale-shadow/eternal-torment}
+}
+\author{Franklin Edward Diaz}
+\date{May 5, 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+\textbf{Purpose:} A high-entropy sandbox repository dedicated to low-level coding practice, infrastructure-as-code (IaC) modeling, and continuous learning.
+
+\textbf{Context:} Part of the \texttt{pale-shadow} organization, this repository serves as a functional testing ground for CTF tools, assembly experiments, and the recently integrated \texttt{ml-gnn} machine learning project. It bridges the gap between raw hardware interaction and cloud-scale infrastructure analysis.
+
+\section{Recent Updates: Project \texttt{ml-gnn}}
+Recent activity focuses on the intersection of Graph Neural Networks and Cloud Security. The primary objective is the automated extraction and analysis of Terraform-based infrastructure digraphs.
+
+\begin{itemize}
+    \item \textbf{Infrastructure Graph Collection:} A Python pipeline (\texttt{src/collection/}) that extracts relationship data from Terraform plans.
+    \item \textbf{Data Lifecycle Management:} Integration of DVC (Data Version Control) for dataset tracking and \texttt{.metadata.json} consistency.
+    \item \textbf{GCP Integration:} Automated exfiltration of DOT, PNG, and Terraform state files to the \texttt{backend-datastore} storage bucket.
+\end{itemize}
+
+\section{Setup \& Environment Configuration}
+The project now supports multi-environment builds via GNU Autotools and containerized runtimes.
+
+\subsection{Docker Workflow}
+For isolated collection without managing local dependencies:
+\begin{lstlisting}[language=bash]
+docker build -t gnn-collection .
+\end{lstlisting}
+
+\subsection{Native Environment (Bash)}
+Standard setup for Debian and OpenBSD environments:
+\begin{lstlisting}[language=bash]
+./bootstrap.sh
+./configure
+make python
+export BASE_DIR=$(pwd)
+source ${BASE_DIR}/_build/bin/activate
+export PYTHONPATH=${BASE_DIR}
+\end{lstlisting}
+
+\subsection{Native Environment (Fish Shell)}
+Setup for interactive Fish shell sessions:
+\begin{lstlisting}[language=bash]
+./bootstrap.sh
+./configure
+make python
+source /home/franklin/workspace/ml-gnn/_build/bin/activate.fish
+set --export PYTHONPATH /home/franklin/workspace/ml-gnn
+\end{lstlisting}
+
+\section{Execution}
+With the environment active, the collection engine is executed from within a Terraform workspace directory:
+
+\begin{lstlisting}[language=bash]
+cd /path/to/terraform/workspace
+python3 ${BASE_DIR}/src/collection/collection.py
+\end{lstlisting}
+
+\section{Computational Performance Metrics}
+Numerical processing for GNN embeddings and large-scale graph analysis is offloaded to the \texttt{lab.bitsmasher.net} NVIDIA Jetson cluster. Throughput is modeled as:
+
+\begin{equation}
+P_{\text{total}} = \sum_{i=1}^{n} (N_{\text{cores}, i} \times f_{i} \times \text{FLOPS}_{\text{cycle}})
+\end{equation}
+
+Where $n=4$ nodes, $N_{\text{cores}, i}$ represents CUDA cores, and $f_{i}$ represents clock frequency.
+
+\section{Technical Stack}
+\begin{itemize}
+    \item \textbf{Languages:} Assembly (AArch64), C, Python, Shell (Bash/Fish/Ksh).
+    \item \textbf{Build Systems:} GNU Autotools, Make.
+    \item \textbf{Cloud/IaC:} Terraform, Google Cloud Platform (GKE, Storage).
+    \item \textbf{Security:} Bandit (SAST), Tox (Automation).
+\end{itemize}
+
+\vspace{2em}
+\noindent\textit{Maintainer: devsecfranklin}\\
+\textit{Organization: Pale Shadow}\\
+\textit{License: Apache-2.0}
+
+\end{document}

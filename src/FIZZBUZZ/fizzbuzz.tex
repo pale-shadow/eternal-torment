@@ -1,0 +1,10 @@
+\section{FIZZBUZZ}
+The \texttt{FIZZBUZZ/} directory serves as a cross-platform benchmarking suite and build-system stress test. By implementing the classic FizzBuzz logic across a vast array of paradigms---from functional (Lisp, Elixir) to legacy (Fortran, Visual Basic) and low-level assembly---this folder validates the compiler availability and runtime stability of the cluster nodes.
+
+\subsection*{Key Implementations}
+\begin{itemize}
+    \item \textbf{ayy\_lmao.s:} x86 assembly utilizing \texttt{int \$0x80} interrupts for direct Linux kernel system calls.
+    \item \textbf{Functional Track:} Implementations in \texttt{Erlang}, \texttt{Clojure}, and \texttt{Lisp} to test recursive logic and VM performance.
+    \item \textbf{Scientific Track:} \texttt{gfortran}, \texttt{f90}, and \texttt{Julia} versions used to verify mathematical library linking.
+    \item \textbf{Build Tooling:} Managed by \texttt{bootstrap.sh} and an \texttt{Xcode} project to support multi-OS development environments.
+\end{itemize}

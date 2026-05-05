@@ -8,4 +8,7 @@
        |___/ |___/                         
 ```
 
-Example code in various languages.
+ the FizzBuzz problem is actually a perfect introduction to The Principle
+ of Inclusion-Exclusion and Least Common Multiples.Numbers divisible by 3: \
+ 
+ "Fizz"Numbers divisible by 5: "Buzz"Numbers divisible by $LCM(3, 5) = 15$: "FizzBuzz"

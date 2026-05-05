@@ -27,8 +27,6 @@ number_transform(Number, Words) when Number rem 5 == 0 ->
         true -> number_transform(round(Number / 5), Words);
         false -> number_transform(round(Number / 5), [?MOD_FIVE|Words])
     end;
-number_transform(Number, []) ->
-    Number;
 number_transform(Number, Words) ->
     Number,
     lists:flatten(lists:reverse(Words)).

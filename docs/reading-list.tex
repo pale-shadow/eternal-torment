@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, margin=1in}
+
+\title{Eternal Torment: Academic Reading List}
+\author{Franklin Edward Diaz}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Overview}
+This document maintains a curated list of literature and technical manuals that inform the algorithmic and mathematical implementations within the \texttt{eternal-torment} repository.
+
+\section{Core Mathematics}
+
+\subsection*{Discrete Mathematics with Ducks}
+\textbf{Author:} dr. sarah-marie belcastro \\
+\textbf{Status:} Active Study / Research Phase
+
+\subsubsection*{Summary}
+This text provides a discovery-based approach to discrete mathematics, emphasizing intuition and formal proof through accessible themes. It serves as the primary theoretical framework for the repository's cryptographic and algorithmic suites.
+
+\subsubsection*{Relevant Themes \& Repository Mapping}
+\begin{itemize}
+    \item \textbf{Theme I: Logic and Proofs} --- Applied to the \texttt{FIZZBUZZ/} polyglot suite as a study in \textit{Proof by Cases} and \textit{Exhaustive Induction}.
+    \item \textbf{Theme II: Number Theory and Cryptography} --- Directly informs the \texttt{vigenere/}, \texttt{trithemius/}, and \texttt{rail-fence/} implementations. Focuses on modular arithmetic ($a \equiv b \pmod{n}$) and shift transformations.
+    \item \textbf{Theme III: Graph Theory} --- Theoretical backing for the \texttt{palm-api/} Graphviz visualizations and future cluster network topology mappings.
+    \item \textbf{Theme IV: Combinatorics} --- Utilized for analyzing the time and space complexity ($O$-notation) of transposition and substitution ciphers.
+\end{itemize}
+
+\section{Low-Level \& Systems}
+
+\subsection*{ARM Assembly Language: Fundamentals and Techniques}
+\textbf{Focus:} AArch64 instruction sets for the NVIDIA Jetson Nano architecture. 
+\textbf{Application:} Core logic for \texttt{src/ass/} and hardware-level performance optimization.
+
+\section{Machine Learning}
+
+\subsection*{Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow}
+\textbf{Application:} Configuring the \texttt{src/tensorflow/} directory, specifically managing \texttt{set\_memory\_growth} for the shared memory architecture of the 2GB DevKit.
+
+\section{Recommended for Future Study}
+
+\subsection*{Gödel, Escher, Bach: An Eternal Golden Braid}
+\textbf{Author:} Douglas Hofstadter \\
+\textbf{Focus:} Formal systems, recursion, and self-reference. Essential for deep logic and AI theory.
+
+\subsection*{Things to Make and Do in the Fourth Dimension}
+\textbf{Author:} Matt Parker \\
+\textbf{Focus:} Recreational mathematics and geometric visualization. Useful for \texttt{src/graphics/} experimentation.
+
+\subsection*{How Not to Be Wrong}
+\textbf{Author:} Jordan Ellenberg \\
+\textbf{Focus:} Mathematical logic and its application to societal structures.
+
+\end

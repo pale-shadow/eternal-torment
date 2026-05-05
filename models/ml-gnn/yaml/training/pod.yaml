@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gke-training-pod-2
+spec:
+  containers:
+  - name: model-graph-neural-net
+    image: gcr.io/gcp-gcs-pso/model-graph-neural-net
+  nodeSelector:
+    app: dev-test
+

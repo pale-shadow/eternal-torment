@@ -1,8 +1,8 @@
 /*
     Write a program that prints the numbers from 1 to 100. 
-    But for multiples of three print ÒFizzÓ instead of the number and for the 
-    multiples of five print ÒBuzzÓ. For numbers which are multiples of both three 
-    and five print ÒFizzBuzzÓ.
+    But for multiples of three print ï¿½Fizzï¿½ instead of the number and for the 
+    multiples of five print ï¿½Buzzï¿½. For numbers which are multiples of both three 
+    and five print ï¿½FizzBuzzï¿½.
  */
 public class fizzbuzz {
 

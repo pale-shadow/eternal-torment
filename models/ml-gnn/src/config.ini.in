@@ -1,0 +1,4 @@
+[required_options]
+gcloud_key_path = ~/.config/gcloud/gcp-gcs-pso-11d22411ba83.json
+terraform_path = @TERRAFORM@
+working_directory = @WORKDIR@
