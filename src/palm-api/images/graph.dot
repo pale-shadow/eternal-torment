@@ -1,0 +1,177 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] data.google_compute_network.mgmt-vpc (expand)" [label = "data.google_compute_network.mgmt-vpc", shape = "box"]
+		"[root] data.google_compute_subnetwork.aus-mgmt-subnetwork (expand)" [label = "data.google_compute_subnetwork.aus-mgmt-subnetwork", shape = "box"]
+		"[root] data.google_compute_subnetwork.mgmt-subnetwork (expand)" [label = "data.google_compute_subnetwork.mgmt-subnetwork", shape = "box"]
+		"[root] data.google_compute_subnetwork.ps-devsecops-mgmt-subnetwork (expand)" [label = "data.google_compute_subnetwork.ps-devsecops-mgmt-subnetwork", shape = "box"]
+		"[root] data.google_compute_subnetwork.ps-devsecops-trust-subnetwork (expand)" [label = "data.google_compute_subnetwork.ps-devsecops-trust-subnetwork", shape = "box"]
+		"[root] data.google_compute_subnetwork.ps-devsecops-untrust-subnetwork (expand)" [label = "data.google_compute_subnetwork.ps-devsecops-untrust-subnetwork", shape = "box"]
+		"[root] data.google_container_engine_versions.gke_version (expand)" [label = "data.google_container_engine_versions.gke_version", shape = "box"]
+		"[root] data.template_file.linux-metadata (expand)" [label = "data.template_file.linux-metadata", shape = "box"]
+		"[root] data.terraform_remote_state.tfstate-bucket (expand)" [label = "data.terraform_remote_state.tfstate-bucket", shape = "box"]
+		"[root] google_compute_address.airlock1_static (expand)" [label = "google_compute_address.airlock1_static", shape = "box"]
+		"[root] google_compute_firewall.allow-egress (expand)" [label = "google_compute_firewall.allow-egress", shape = "box"]
+		"[root] google_compute_firewall.lab-franklin-ingress (expand)" [label = "google_compute_firewall.lab-franklin-ingress", shape = "box"]
+		"[root] google_compute_firewall.lab-ingress (expand)" [label = "google_compute_firewall.lab-ingress", shape = "box"]
+		"[root] google_compute_instance.gcp_airlock (expand)" [label = "google_compute_instance.gcp_airlock", shape = "box"]
+		"[root] google_compute_network.vpc (expand)" [label = "google_compute_network.vpc", shape = "box"]
+		"[root] google_compute_router.router (expand)" [label = "google_compute_router.router", shape = "box"]
+		"[root] google_compute_subnetwork.gke-subnet (expand)" [label = "google_compute_subnetwork.gke-subnet", shape = "box"]
+		"[root] google_container_cluster.primary (expand)" [label = "google_container_cluster.primary", shape = "box"]
+		"[root] google_container_node_pool.cn-series (expand)" [label = "google_container_node_pool.cn-series", shape = "box"]
+		"[root] google_container_node_pool.production (expand)" [label = "google_container_node_pool.production", shape = "box"]
+		"[root] module.cloud-nat.google_compute_router.router (expand)" [label = "module.cloud-nat.google_compute_router.router", shape = "box"]
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" [label = "module.cloud-nat.google_compute_router_nat.main", shape = "box"]
+		"[root] module.cloud-nat.random_string.name_suffix (expand)" [label = "module.cloud-nat.random_string.name_suffix", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"]" [label = "provider[\"registry.terraform.io/hashicorp/google\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/random\"]" [label = "provider[\"registry.terraform.io/hashicorp/random\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"]" [label = "provider[\"registry.terraform.io/hashicorp/template\"]", shape = "diamond"]
+		"[root] provider[\"terraform.io/builtin/terraform\"]" [label = "provider[\"terraform.io/builtin/terraform\"]", shape = "diamond"]
+		"[root] var.access_list" [label = "var.access_list", shape = "note"]
+		"[root] var.debian_11_sku" [label = "var.debian_11_sku", shape = "note"]
+		"[root] var.linux_instance_type" [label = "var.linux_instance_type", shape = "note"]
+		"[root] var.name" [label = "var.name", shape = "note"]
+		"[root] var.name_prefix" [label = "var.name_prefix", shape = "note"]
+		"[root] var.openshift-region" [label = "var.openshift-region", shape = "note"]
+		"[root] var.openshift-zone" [label = "var.openshift-zone", shape = "note"]
+		"[root] var.project_id" [label = "var.project_id", shape = "note"]
+		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] var.service_account_terraform" [label = "var.service_account_terraform", shape = "note"]
+		"[root] var.ssh_key" [label = "var.ssh_key", shape = "note"]
+		"[root] var.tags" [label = "var.tags", shape = "note"]
+		"[root] var.ubuntu_2004_sku" [label = "var.ubuntu_2004_sku", shape = "note"]
+		"[root] var.zone" [label = "var.zone", shape = "note"]
+		"[root] data.google_compute_network.mgmt-vpc (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] data.google_compute_network.mgmt-vpc (expand)" -> "[root] var.name_prefix"
+		"[root] data.google_compute_subnetwork.aus-mgmt-subnetwork (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] data.google_compute_subnetwork.aus-mgmt-subnetwork (expand)" -> "[root] var.name_prefix"
+		"[root] data.google_compute_subnetwork.aus-mgmt-subnetwork (expand)" -> "[root] var.openshift-region"
+		"[root] data.google_compute_subnetwork.mgmt-subnetwork (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] data.google_compute_subnetwork.mgmt-subnetwork (expand)" -> "[root] var.name_prefix"
+		"[root] data.google_compute_subnetwork.ps-devsecops-mgmt-subnetwork (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] data.google_compute_subnetwork.ps-devsecops-trust-subnetwork (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] data.google_compute_subnetwork.ps-devsecops-untrust-subnetwork (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] data.google_container_engine_versions.gke_version (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] data.google_container_engine_versions.gke_version (expand)" -> "[root] var.zone"
+		"[root] data.template_file.linux-metadata (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"]"
+		"[root] data.terraform_remote_state.tfstate-bucket (expand)" -> "[root] provider[\"terraform.io/builtin/terraform\"]"
+		"[root] google_compute_address.airlock1_static (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_address.airlock1_static (expand)" -> "[root] var.name_prefix"
+		"[root] google_compute_firewall.allow-egress (expand)" -> "[root] data.google_compute_network.mgmt-vpc (expand)"
+		"[root] google_compute_firewall.lab-franklin-ingress (expand)" -> "[root] data.google_compute_network.mgmt-vpc (expand)"
+		"[root] google_compute_firewall.lab-franklin-ingress (expand)" -> "[root] var.access_list"
+		"[root] google_compute_firewall.lab-ingress (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_firewall.lab-ingress (expand)" -> "[root] var.access_list"
+		"[root] google_compute_instance.gcp_airlock (expand)" -> "[root] data.google_compute_network.mgmt-vpc (expand)"
+		"[root] google_compute_instance.gcp_airlock (expand)" -> "[root] data.google_compute_subnetwork.mgmt-subnetwork (expand)"
+		"[root] google_compute_instance.gcp_airlock (expand)" -> "[root] data.template_file.linux-metadata (expand)"
+		"[root] google_compute_instance.gcp_airlock (expand)" -> "[root] google_compute_address.airlock1_static (expand)"
+		"[root] google_compute_instance.gcp_airlock (expand)" -> "[root] var.debian_11_sku"
+		"[root] google_compute_instance.gcp_airlock (expand)" -> "[root] var.linux_instance_type"
+		"[root] google_compute_instance.gcp_airlock (expand)" -> "[root] var.tags"
+		"[root] google_compute_instance.gcp_airlock (expand)" -> "[root] var.zone"
+		"[root] google_compute_network.vpc (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_network.vpc (expand)" -> "[root] var.name"
+		"[root] google_compute_router.router (expand)" -> "[root] data.google_compute_network.mgmt-vpc (expand)"
+		"[root] google_compute_subnetwork.gke-subnet (expand)" -> "[root] data.google_compute_network.mgmt-vpc (expand)"
+		"[root] google_container_cluster.primary (expand)" -> "[root] data.google_compute_network.mgmt-vpc (expand)"
+		"[root] google_container_cluster.primary (expand)" -> "[root] var.service_account_terraform"
+		"[root] google_container_node_pool.cn-series (expand)" -> "[root] google_container_cluster.primary (expand)"
+		"[root] google_container_node_pool.production (expand)" -> "[root] google_container_cluster.primary (expand)"
+		"[root] module.cloud-nat (close)" -> "[root] module.cloud-nat.output.name (expand)"
+		"[root] module.cloud-nat (close)" -> "[root] module.cloud-nat.output.nat_ip_allocate_option (expand)"
+		"[root] module.cloud-nat (close)" -> "[root] module.cloud-nat.output.region (expand)"
+		"[root] module.cloud-nat (close)" -> "[root] module.cloud-nat.output.router_name (expand)"
+		"[root] module.cloud-nat.google_compute_router.router (expand)" -> "[root] module.cloud-nat.var.create_router (expand)"
+		"[root] module.cloud-nat.google_compute_router.router (expand)" -> "[root] module.cloud-nat.var.network (expand)"
+		"[root] module.cloud-nat.google_compute_router.router (expand)" -> "[root] module.cloud-nat.var.project_id (expand)"
+		"[root] module.cloud-nat.google_compute_router.router (expand)" -> "[root] module.cloud-nat.var.region (expand)"
+		"[root] module.cloud-nat.google_compute_router.router (expand)" -> "[root] module.cloud-nat.var.router (expand)"
+		"[root] module.cloud-nat.google_compute_router.router (expand)" -> "[root] module.cloud-nat.var.router_asn (expand)"
+		"[root] module.cloud-nat.google_compute_router.router (expand)" -> "[root] module.cloud-nat.var.router_keepalive_interval (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.local.name (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.local.nat_ip_allocate_option (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.local.router (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.enable_endpoint_independent_mapping (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.icmp_idle_timeout_sec (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.log_config_enable (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.log_config_filter (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.min_ports_per_vm (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.source_subnetwork_ip_ranges_to_nat (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.subnetworks (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.tcp_established_idle_timeout_sec (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.tcp_transitory_idle_timeout_sec (expand)"
+		"[root] module.cloud-nat.google_compute_router_nat.main (expand)" -> "[root] module.cloud-nat.var.udp_idle_timeout_sec (expand)"
+		"[root] module.cloud-nat.local.default_name (expand)" -> "[root] module.cloud-nat.random_string.name_suffix (expand)"
+		"[root] module.cloud-nat.local.default_nat_ip_allocate_option (expand)" -> "[root] module.cloud-nat.local.nat_ips_length (expand)"
+		"[root] module.cloud-nat.local.name (expand)" -> "[root] module.cloud-nat.local.default_name (expand)"
+		"[root] module.cloud-nat.local.name (expand)" -> "[root] module.cloud-nat.var.name (expand)"
+		"[root] module.cloud-nat.local.nat_ip_allocate_option (expand)" -> "[root] module.cloud-nat.local.default_nat_ip_allocate_option (expand)"
+		"[root] module.cloud-nat.local.nat_ip_allocate_option (expand)" -> "[root] module.cloud-nat.var.nat_ip_allocate_option (expand)"
+		"[root] module.cloud-nat.local.nat_ips_length (expand)" -> "[root] module.cloud-nat.var.nat_ips (expand)"
+		"[root] module.cloud-nat.local.router (expand)" -> "[root] module.cloud-nat.google_compute_router.router (expand)"
+		"[root] module.cloud-nat.output.name (expand)" -> "[root] module.cloud-nat.local.name (expand)"
+		"[root] module.cloud-nat.output.nat_ip_allocate_option (expand)" -> "[root] module.cloud-nat.local.nat_ip_allocate_option (expand)"
+		"[root] module.cloud-nat.output.region (expand)" -> "[root] module.cloud-nat.google_compute_router_nat.main (expand)"
+		"[root] module.cloud-nat.output.router_name (expand)" -> "[root] module.cloud-nat.local.router (expand)"
+		"[root] module.cloud-nat.random_string.name_suffix (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.random_string.name_suffix (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"]"
+		"[root] module.cloud-nat.var.create_router (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.enable_endpoint_independent_mapping (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.icmp_idle_timeout_sec (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.log_config_enable (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.log_config_filter (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.min_ports_per_vm (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.name (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.nat_ip_allocate_option (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.nat_ips (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.network (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.project_id (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.project_id (expand)" -> "[root] var.project_id"
+		"[root] module.cloud-nat.var.region (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.region (expand)" -> "[root] var.region"
+		"[root] module.cloud-nat.var.router (expand)" -> "[root] google_compute_router.router (expand)"
+		"[root] module.cloud-nat.var.router (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.router_asn (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.router_keepalive_interval (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.source_subnetwork_ip_ranges_to_nat (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.subnetworks (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.tcp_established_idle_timeout_sec (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.tcp_transitory_idle_timeout_sec (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] module.cloud-nat.var.udp_idle_timeout_sec (expand)" -> "[root] module.cloud-nat (expand)"
+		"[root] output.airlock_external_ip (expand)" -> "[root] google_compute_address.airlock1_static (expand)"
+		"[root] output.airlock_internal_ip (expand)" -> "[root] google_compute_instance.gcp_airlock (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] data.google_compute_subnetwork.aus-mgmt-subnetwork (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] data.google_compute_subnetwork.ps-devsecops-mgmt-subnetwork (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] data.google_compute_subnetwork.ps-devsecops-trust-subnetwork (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] data.google_compute_subnetwork.ps-devsecops-untrust-subnetwork (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] data.google_container_engine_versions.gke_version (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_firewall.allow-egress (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_firewall.lab-franklin-ingress (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_firewall.lab-ingress (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_instance.gcp_airlock (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_network.vpc (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_subnetwork.gke-subnet (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_container_node_pool.cn-series (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_container_node_pool.production (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] module.cloud-nat.google_compute_router_nat.main (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"]" -> "[root] var.project_id"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"]" -> "[root] var.region"
+		"[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)" -> "[root] module.cloud-nat.random_string.name_suffix (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)" -> "[root] data.template_file.linux-metadata (expand)"
+		"[root] provider[\"terraform.io/builtin/terraform\"] (close)" -> "[root] data.terraform_remote_state.tfstate-bucket (expand)"
+		"[root] root" -> "[root] module.cloud-nat (close)"
+		"[root] root" -> "[root] output.airlock_external_ip (expand)"
+		"[root] root" -> "[root] output.airlock_internal_ip (expand)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)"
+		"[root] root" -> "[root] provider[\"terraform.io/builtin/terraform\"] (close)"
+		"[root] root" -> "[root] var.openshift-zone"
+		"[root] root" -> "[root] var.ssh_key"
+		"[root] root" -> "[root] var.ubuntu_2004_sku"
+	}
+}
+

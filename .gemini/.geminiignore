@@ -1,0 +1,35 @@
+# Version Control
+**/.git/
+
+# Autotools & Build System Cache
+**/autom4te.cache/
+aclocal/
+aclocal.m4
+compile
+config.guess
+config.log
+config.status
+config.sub
+depcomp
+install-sh
+missing
+stamp-h1
+.deps/
+.libs/
+Makefile.in
+
+# C & Assembly Compiled Objects
+*.o
+*.lo
+*.a
+*.so
+*.out
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*venv/
+
+# OS/System Files
+.DS_Store
+Thumbs.db

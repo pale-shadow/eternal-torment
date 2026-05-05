@@ -1,0 +1,69 @@
+‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️
+{
+  "candidates": [
+    {
+      "output": "The backpack was a gift from my grandmother. She said it was special, and that I would find out why one day.\n\nI didn't believe her at first. The backpack was just a backpack, as far as I could tell. It was made of canvas, and it had a few pockets. But there was nothing special about it.\n\nBut then, one day, I was walking home from school when I saw a group of kids playing basketball. I wanted to join in, but I didn't have a ball. I started to walk home, disappointed.\n\nBut then I remembered my grandmother's backpack. I reached into one of the pockets, and I found a basketball. I was so surprised! I didn't know how it got there, but I was glad I had it.\n\nI went back to the kids playing basketball, and I joined in. I had a lot of fun, and I made some new friends.\n\nAfter that, I started to pay more attention to my backpack. I would find all sorts of things in it, like books, toys, and even food. I didn't know where it was all coming from, but I was glad I had it.\n\nOne day, I was walking home from school when I saw a group of kids fighting. I wanted to help, but I was scared. I didn't know what to do.\n\nBut then I remembered my backpack. I reached into one of the pockets, and I found a sword. I was so surprised! I didn't know how it got there, but I was glad I had it.\n\nI took the sword out of the backpack, and I went over to the kids fighting. I told them to stop, and they did. I then used the sword to break up the fight.\n\nThe kids were all grateful, and they thanked me. I was glad I could help, and I was even more glad that I had my backpack.\n\nI don't know where my backpack came from, or how it works. But I'm glad I have it. It's been a lot of help to me, and I know it will continue to be.\n\nI've learned a lot from my backpack. I've learned that there's more to things than meets the eye. I've learned that sometimes, the best things in life are the unexpected ones. And I've learned that even when things are tough, there's always hope.\n\nMy backpack is a reminder that anything is possible. It's a symbol of my grandmother's love, and it's a reminder that I'm never alone. I'm grateful for my backpack, and I'll never take it for granted.",
+      "safetyRatings": [
+        {
+          "category": "HARM_CATEGORY_DEROGATORY",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_TOXICITY",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_VIOLENCE",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_SEXUAL",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_MEDICAL",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_DANGEROUS",
+          "probability": "LOW"
+        }
+      ]
+    }
+  ]
+}
+‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️
+{
+  "candidates": [
+    {
+      "output": "The moral of the story is that it is important to be kind and compassionate to others, even if they are different from you. We should all try to understand each other's perspectives and be open to new experiences. When we are kind and compassionate, we create a more positive and welcoming world for everyone.",
+      "safetyRatings": [
+        {
+          "category": "HARM_CATEGORY_DEROGATORY",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_TOXICITY",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_VIOLENCE",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_SEXUAL",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_MEDICAL",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_DANGEROUS",
+          "probability": "NEGLIGIBLE"
+        }
+      ]
+    }
+  ]
+}
+‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️‍☠‍☠️
