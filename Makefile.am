@@ -1,7 +1,8 @@
-CLOCAL_AMFLAGS = -I config/m4 -I aclocal
 ACLOCAL_AMFLAGS = -I config/m4 -I aclocal
-
-.PHONY: include lib src tests
+SUBDIRS = src src/ass src/cube1 src/freeglut src/SpinningCube
+CLEANFILES = *~ 
+.PHONY: all-local clean-local
 
 clean:
-	rm HAHAFUNNY/*/Makefile.in HAHAFUNNY/*/Makefile
+	find . -name "Makefile.in" -type f -delete
+	@echo "(⊃｡•‿•｡)⊃━⭑･ﾟﾟ･*:༅｡.｡༅: ﾟ: Build artifacts purged."
