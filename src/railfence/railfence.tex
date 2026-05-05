@@ -1,0 +1,11 @@
+\section{rail-fence}
+The Rail Fence cipher (or zigzag cipher) is a transposition cipher that rearranges the characters of a message based on a diagonal, oscillating pattern across a set number of rails. Unlike substitution-based methods, this cipher maintains the original character set but alters their spatial distribution.
+
+
+
+\subsection*{Technical Considerations}
+\begin{itemize}
+    \item \textbf{Time Complexity:} Both encryption and decryption operate in $O(n \times \text{rails})$ time, where $n$ is the length of the text.
+    \item \textbf{Space Complexity:} A standard matrix-based implementation uses $O(n \times \text{rails})$ space. For a more memory-efficient approach (ideal for low-level or \texttt{ass/} implementations), the mathematical index of each character can be calculated directly to achieve $O(n)$ or even $O(1)$ auxiliary space.
+    \item \textbf{Security:} Like most classical transposition ciphers, the Rail Fence cipher is cryptographically weak. It is vulnerable to brute force attacks (as the number of rails is typically small) and frequency analysis of ``digrams'' (letter pairs).
+\end{itemize}
