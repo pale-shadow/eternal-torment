@@ -11,3 +11,11 @@ doas pkg_add cmake
 cd /usr/ports/graphics/freeglut && doas make
 gcc freeglut-cube.c -o fg -lGL -lGLU -lglut
 ```
+
+## linux build
+
+```bash
+sudo apt update
+sudo apt install freeglut3-dev libgl1-mesa-dev libglu1-mesa-dev
+gcc freeglut-cube.c -o fg-cube -lGL -lGLU -lglut
+```
