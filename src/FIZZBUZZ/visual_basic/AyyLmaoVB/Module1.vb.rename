@@ -1,0 +1,20 @@
+﻿Module Module1
+
+    Sub Main()
+
+        For x As Integer = 1 To 100
+            if (x Mod 3 == 0) && (x Mod 5 == 0) Then
+                Console.Write("AyyLmao\n")
+            ElseIf (x Mod 3 == 0) Then
+                Console.Write("Ayy\n")
+            ElseIf (x Mod 5 == 0) Then
+                Console.Write("Lmao\n")
+            Else
+                String.Format("{0}\n", x)
+            End If
+            Console.ReadKey();
+        Next
+
+    End Sub
+
+End Module
