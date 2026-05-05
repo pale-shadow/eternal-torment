@@ -1,8 +1,6 @@
 dvc
-keras
-tensorflow
 seaborn
 sklearn
-scipy
-numpy
 vectormath
+# tensorflow, keras, scipy, and numpy are pre-installed 
+# and linked to CUDA/cuDNN in the L4T base image.

@@ -1,10 +1,16 @@
-Make sure you have the javas:
+# Java FizzBuzz
+
+Validates the OpenJDK toolchain on the math cluster. 
+
+## Build & Execution
+Ensure the filename matches the class name (`fizzbuzz.java`).
+
+```sh
+# Verify environment
 java -version
 
-# build it:
+# Build the bytecode
+javac fizzbuzz.java
 
-javac ayylmao.java 
-
-# run it
-
-java ayylmao
+# Run on the JVM
+java fizzbuzz

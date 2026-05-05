@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ml-gnn-collect:
+    image: ml-gnn-collect
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.collection
+    container_name: ml-gnn-collect
+    volumes:
+      - ./:/workspace

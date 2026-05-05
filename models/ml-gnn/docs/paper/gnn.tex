@@ -1,0 +1,41 @@
+% !TeX document-id = {ca5670f8-72da-4ebb-a93c-3dafd3d2591c}
+% !TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
+% https://orcid.org/0000-0003-4586-8500
+
+\include{preamble}
+
+\begin{document}
+\vspace{2mm}
+\include{title}
+\vspace{2mm}
+
+\include{mainmatter/01-introduction}
+\include{mainmatter/02-primer}
+\include{mainmatter/03-collection}
+\include{mainmatter/04-preparation}
+\include{mainmatter/05-visualization}
+
+
+\section{\label{sec:reading}Resources}
+
+\justifying
+Here is a quick list of things that I found interesting and relevant.
+
+\begin{raggedright}
+	\begin{enumerate}
+		\item There is an excellent \href{https://www.youtube.com/watch?v=8owQBFAHw7E}{talk on YouTube by Petar Veličković}, a research scientist at \href{https://deepmind.com/about}{DeepMind}.
+		\item The \href{https://github.com/tkipf/gcn}{Kipf and Welling GCN repo on GitHub}.
+    \end{enumerate}
+\end{raggedright}
+\vspace{2mm}
+
+\clearpage
+\begin{versionhistory}
+	\vhEntry{v0.1}{Nov. 20th, 2021}{Franklin Diaz}{Initial Draft}
+	\vhEntry{v0.2}{May 3rd, 2024}{Franklin Diaz}{Collection tool updates}
+\end{versionhistory}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{mybib.bib}
+
+\end{document}

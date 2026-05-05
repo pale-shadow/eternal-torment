@@ -1,0 +1,5 @@
+git
+make
+automake
+libtool
+python3-pygit2

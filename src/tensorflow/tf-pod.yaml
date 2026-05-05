@@ -1,7 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: with-node-affinity
+  name: tf-jetson-worker
+  labels:
+    app: tensorflow-practice
 spec:
   affinity:
     nodeAffinity:
@@ -12,14 +14,22 @@ spec:
             operator: In
             values:
             - nvidia-jetson
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: another-node-label-key
-            operator: In
-            values:
-            - another-node-label-value
+  
+  tolerations:
+  - key: "board"
+    operator: "Equal"
+    value: "nvidia-jetson"
+    effect: "NoSchedule"
+
   containers:
-  - name: with-node-affinity
-    image: nvcr.io/nvidia/l4t-tensorflow:r32.6.1-tf2.5-py
+  - name: tensorflow-container
+    image: nvcr.io/nvidia/l4t-tensorflow:r32.6.1-tf2.5-py3
+    resources:
+      limits:
+        memory: "4Gi"
+      requests:
+        memory: "2Gi"
+    env:
+    - name: EDITOR
+      value: "vi"
+    command: ["/bin/bash", "-c", "tail -f /dev/null"]

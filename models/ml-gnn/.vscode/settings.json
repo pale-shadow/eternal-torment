@@ -1,0 +1,10 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.associations": {
+        "*.dvc": "yaml",
+        "dvc.lock": "yaml"
+    },
+    "python.analysis.extraPaths": [
+        "./src/lib"
+    ]
+}

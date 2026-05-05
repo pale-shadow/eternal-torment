@@ -1,0 +1,41 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Eternal Torment: src/ Repository Overview}
+\author{pale shadow}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{ass / ass-intel-x86}
+Contains low-level assembly experimentation, focusing on AArch64 and x86-64 system calls, register operations, and build automation via GNU Autotools.
+
+\section{palm-api}
+Integration scripts for Large Language Model APIs, featuring utilities for technical documentation and Graphviz-based architectural visualizations.
+
+\section{trithemius}
+Implementation of the polyalphabetic Trithemius cipher, which utilizes a linear progressive shift logic based on character position.
+
+\section{vigenere}
+The Vigenère cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword. Unlike the Trithemius cipher, which uses a fixed progressive shift, the Vigenère cipher uses the characters of a secret key to determine the shift for each letter.
+
+The mathematical formula for encryption is:
+\begin{equation}
+    C_i = (P_i + K_i) \pmod{26}
+\end{equation}
+Where $C$ is the ciphertext, $P$ is the plaintext, and $K$ is the key (repeated to match the length of the plaintext).
+
+\section{Graphics, Math, and ML}
+Includes dedicated sandboxes for:
+\begin{itemize}
+    \item \textbf{Graphics:} \texttt{mandelbrot}, \texttt{freeglut}, and \texttt{SpinningCube}.
+    \item \textbf{Mathematics:} \texttt{calc-pi} and \texttt{projecteuler.net}.
+    \item \textbf{Machine Learning:} \texttt{tensorflow} and \texttt{betty-lab}.
+\end{itemize}
+
+\end{document}

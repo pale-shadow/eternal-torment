@@ -1,0 +1,3 @@
+{
+    "files": ["visualize/visualize.py","collection/__init__.py","collection/collection.pyproject.user","training/training.py","visualize/__init__.py","collection/requirements.txt","training/README.md","training/trusted.gpg","visualize/requirements.txt","__init__.py","training/sources.list","README.md","collection/README.md","training/requirements.txt","training/__init__.py","logo.txt","training/resolv.conf","collection/collection.py","lib/terraform.py","lib/data.py","lib/common.py","lib/cleaning.py","lib/algorithms.py","lib/__init__.py"]
+}

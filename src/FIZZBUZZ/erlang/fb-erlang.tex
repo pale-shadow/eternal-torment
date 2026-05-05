@@ -1,0 +1,14 @@
+\section{erlang-implementations}
+The \texttt{erlang/} directory features two distinct approaches to sequence transformation, validating the BEAM VM's handling of anonymous functions and deep recursion on the cluster nodes.
+
+\subsection*{Functional Approaches}
+\begin{itemize}
+    \item \textbf{ayy\_lmao.erl:} A set-builder implementation utilizing list comprehensions and anonymous functions. This script demonstrates the importance of guard clause ordering in top-down pattern matching.
+    \item \textbf{fizzbuzz.erl:} A recursive accumulator model. This implementation treats the problem as a factor-decomposition task, recursively reducing the input number and accumulating string constants (\texttt{MOD\_THREE}, \texttt{MOD\_FIVE}) into a state-tracking list.
+\end{itemize}
+
+\subsection*{Mathematical Concepts}
+\begin{itemize}
+    \item \textbf{Tail Recursion:} The \texttt{number\_transform/2} function utilizes an accumulator pattern, which is a foundational concept in \textit{Discrete Mathematics with Ducks} for defining sequences inductively.
+    \item \textbf{Modular Partitioning:} Both scripts serve as practical applications of congruence classes modulo 3, 5, and 15.
+\end{itemize}

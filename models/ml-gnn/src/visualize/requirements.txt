@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2024 DE:AD:10:C5 <franklin@dead10c5.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+dvc[gs] # does not work on local cluster due to py3-git2 issue
+graphviz==0.20.3
+google-cloud-storage==2.18.2
+networkx==3.4.2
+matplotlib==3.9.2
+pandas==2.2.3
+pydot==3.0.2
+pygraphviz==1.14
+python-terraform==0.10.1
+pytz==2024.2
+scipy==1.14.1 # needed by networkx to make adj matrix
+#tensorflow

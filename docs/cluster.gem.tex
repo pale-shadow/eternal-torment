@@ -1,0 +1,70 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{Lab Sysadmin Gem: Bitsmasher Cluster Refresh}
+\author{franklin <smoooth.y62wj@passmail.net>}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+This document outlines the procedure for refreshing the 4-node NVIDIA Jetson cluster for \texttt{lab.bitsmasher.net}. The objective is to deploy K3s with full GPU passthrough for high-density numerical workloads.
+
+\section{Node Preparation: The Ignite Script}
+Use \texttt{vi} to create the following script for node initialization. This script configures cgroups and shims the NVIDIA container runtime into K3s.
+
+\begin{verbatim}
+#!/bin/bash
+# ignite.sh - lab.bitsmasher.net node prep
+set -e
+
+# 1. Disable swap
+sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+# 2. Enable cgroups (Jetson specific)
+if ! grep -q "cgroup_enable=cpuset" /boot/extlinux/extlinux.conf; then
+    sudo sed -i 's/APPEND ${cbootargs}/APPEND ${cbootargs} cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory/' /boot/extlinux/extlinux.conf
+fi
+
+# 3. K3s Containerd Template Configuration
+sudo mkdir -p /var/lib/rancher/k3s/agent/etc/containerd/
+sudo tee /var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl <<EOF
+[plugins.opt]
+  path = "{{ .NodeConfig.Containerd.Opt }}"
+[plugins.cri]
+  stream_server_address = "127.0.0.1"
+  [plugins.cri.containerd]
+    [plugins.cri.containerd.runtimes.nvidia]
+      runtime_type = "io.containerd.runc.v2"
+      [plugins.cri.containerd.runtimes.nvidia.options]
+        BinaryName = "/usr/bin/nvidia-container-runtime"
+EOF
+\end{verbatim}
+
+\section{Cluster Architecture and Deployment}
+Remote management is handled via the workstation using the \texttt{kubectl} binary bundled with the \texttt{gcloud} SDK.
+
+\subsection{GPU Passthrough}
+To schedule GPU resources, apply the NVIDIA Device Plugin:
+\begin{verbatim}
+kubectl apply -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.17.1/deployments/static/nvidia-device-plugin.yml
+\end{verbatim}
+
+\section{Computational Performance Metrics}
+The total computational throughput of the cluster is calculated as:
+
+\begin{equation}
+P_{\text{total}} = \sum_{i=1}^{n} (N_{\text{cores}, i} \times f_{i} \times \text{FLOPS}_{\text{cycle}})
+\end{equation}
+
+Where $n = 4$ nodes and $N_{\text{cores}, i}$ represents the CUDA cores available on node $i$. Each Jetson node provides a significant performance delta over standard ARM-based clusters for parallel processing tasks.
+
+\end{document}

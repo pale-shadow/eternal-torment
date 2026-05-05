@@ -1,0 +1,16 @@
+\section{tensorflow}
+The \texttt{tensorflow/} directory serves as a high-performance machine learning sandbox optimized for edge hardware, specifically the NVIDIA Jetson Nano 2GB Developer Kit. This environment focuses on deploying containerized models to a Maxwell-based GPU architecture while managing the unique constraints of a shared memory pool on ARMv8 AArch64.
+
+\subsection*{Architecture and Orchestration}
+\begin{itemize}
+    \item \textbf{Target Hardware:} 128-core NVIDIA Maxwell GPU on the ARMv8-A (AArch64) instruction set.
+    \item \textbf{Base Environment:} \texttt{nvcr.io/nvidia/l4t-tensorflow:r32.6.1-tf2.5-py3}, providing hardware-tuned TensorFlow 2.5.0 binaries pre-linked to CUDA-X (cuDNN and TensorRT).
+    \item \textbf{Kubernetes Scheduling:} Workloads utilize \texttt{nodeAffinity} labels (e.g., \texttt{board: nvidia-jetson}) to ensure proper container placement on compatible nodes equipped with the NVIDIA container runtime.
+\end{itemize}
+
+\subsection*{Resource and Dependency Optimization}
+\begin{itemize}
+    \item \textbf{VRAM Management:} To mitigate Out of Memory (OOM) events on the unified 2GB LPDDR4 memory pool, implementations utilize \texttt{set\_memory\_growth} to enable incremental resource allocation rather than a full-pool greedy allocation at startup.
+    \item \textbf{Dependency Hygiene:} The \texttt{requirements.txt} is strictly audited to exclude \texttt{tensorflow}, \texttt{numpy}, or \texttt{scipy}, preventing generic PyPI wheels from overwriting the L4T-optimized versions required for GPU visibility.
+    \item \textbf{Deployment:} Managed via \texttt{tf-pod.yaml}, incorporating resource requests and limits to ensure stability across the K3s/GKE cluster nodes.
+\end{itemize}
