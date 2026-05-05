@@ -1,10 +1,11 @@
-AS = as
-LD = ld
-GDB = gdb
+# Use the cross-compiler tools
+AS = aarch64-linux-gnu-as
+LD = aarch64-linux-gnu-ld
+GDB = gdb-multiarch
 
 SRC = funk.s
-OBJ = ../build/funk.o
-EXEC = ../build/funk
+OBJ = funk.o
+EXEC = funk
 
 # Define assembly flags, including debug options
 # --gstabs includes stabs debugging symbols, compatible with GDB
