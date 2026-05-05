@@ -1,0 +1,8 @@
+\section*{Trithemius Cipher Implementation}
+
+The Trithemius Cipher is a fascinating next step for this repo, especially given the low-level and cryptographic interests reflected in your previous work. As a polyalphabetic substitution cipher, it is essentially a Vigenère cipher where the shift increases by exactly one for every character in the message.
+
+The shift logic follows a simple linear progression:
+\[ \text{Ciphertext}[i] = (\text{Plaintext}[i] + i) \pmod{26} \]
+
+This eliminates the need for a traditional ``key'' because the key is effectively the sequence $0, 1, 2, 3, \dots$.
