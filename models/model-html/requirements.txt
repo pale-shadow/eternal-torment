@@ -1,0 +1,21 @@
+#url scraper
+kaggle
+simplejson
+regex
+tabulate
+bs4
+lxml
+urllib3
+aiohttp
+asyncio
+# for jupyter
+#notebook
+#juypterlab
+setuptools
+sklearn
+matplotlib
+# for normalizing data
+flatten_json
+pandas
+numpy
+#boto3

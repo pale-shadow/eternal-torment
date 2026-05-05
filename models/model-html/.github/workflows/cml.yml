@@ -1,0 +1,26 @@
+name: train-my-model
+
+on: [push]
+
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: iterative/setup-cml@v1
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: cml
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          pip3 install wheel
+          pip3 install -r requirements.txt
+          python src/train.py >> report.md
+          cml-send-comment report.md
