@@ -1,50 +1,53 @@
-#                                               -*- Autoconf -*-
-# Process this file with autoconf to produce a configure script.
-
 AC_PREREQ([2.71])
-AC_INIT(eternal-torment, [0.3], [smoooth.y62wj@passmail.net], https://github.com/pale-shadow/eternal-torment/issues)
-
-dnl AC_CONFIG_SRCDIR([cube1])
-
+AC_INIT([eternal-torment], [0.3], [smoooth.y62wj@passmail.net])
+AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_HEADERS([config.h])
 
-# Checks for programs.
-AC_PROG_AWK
+dnl --- Initialize Automake ---
+dnl 'foreign' tells automake not to require GNU files like NEWS/AUTHORS
+dnl 'subdir-objects' is required since your source is inside src/
+AM_INIT_AUTOMAKE([foreign subdir-objects])
+
+dnl --- Checks for programs ---
 AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 
-# Checks for libraries.
-# FIXME: Replace 'main' with a function in '-lGL':
-AC_CHECK_LIB([GL], [main])
-# FIXME: Replace 'main' with a function in '-lGLU':
-AC_CHECK_LIB([GLU], [main])
-# FIXME: Replace 'main' with a function in '-lX11':
-AC_CHECK_LIB([X11], [main])
-# FIXME: Replace 'main' with a function in '-lglut':
-AC_CHECK_LIB([glut], [main])
-# FIXME: Replace 'main' with a function in '-lm':
-AC_CHECK_LIB([m], [main])
-
-# Checks for header files.
-AC_CHECK_HEADERS([unistd.h])
-
-# Checks for typedefs, structures, and compiler characteristics.
-
-# Checks for library functions.
-AC_CHECK_FUNCS([memset])
-
-AC_CONFIG_FILES([
-    src/SpinningCube/Makefile
-    src/cube1/Makefile
-    src/freeglut/Makefile
-    src/Makefile
-])
-
-AM_INIT_AUTOMAKE(foreign)
-AC_CHECK_PROG(HAVE_AS, [as], [found], [not-found])
+dnl --- Native Assembly Support ---
+AM_PROG_AS
 AC_CHECK_PROG(HAVE_GDB, [gdb], [found], [not-found])
 AC_CHECK_PROG(HAVE_LD, [ld], [found], [not-found])
 
+dnl --- Checks for libraries ---
+dnl Using actual functions to ensure libraries are detected correctly
+AC_CHECK_LIB([m], [cos])
+AC_CHECK_LIB([GL], [glBegin])
+AC_CHECK_LIB([GLU], [gluNewQuadric])
+AC_CHECK_LIB([X11], [XOpenDisplay])
+AC_CHECK_LIB([glut], [glutInit])
+
+dnl --- Checks for header files ---
+AC_CHECK_HEADERS([unistd.h])
+
+dnl --- Checks for library functions ---
+AC_CHECK_FUNCS([memset])
+
+dnl --- Generate Output Files ---
+dnl IMPORTANT: 'Makefile' must be listed first to generate the root Makefile.
+dnl All sub-paths now point to the 'src/' directory structure.
+AC_CONFIG_FILES([
+    Makefile
+    src/Makefile
+    src/ass/Makefile
+    src/cube1/Makefile
+    src/freeglut/Makefile
+    src/SpinningCube/Makefile
+])
 
 AC_OUTPUT
+
+AC_MSG_NOTICE([
+(⊃｡•‿•｡)⊃━⭑･ﾟﾟ･*:༅｡.｡༅: ﾟ: :✼✿ 
+Configuration for $PACKAGE_NAME is ready.
+☽༓･*˚⁺‧
+])

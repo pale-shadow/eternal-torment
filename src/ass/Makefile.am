@@ -1,9 +1,13 @@
-# Define the resulting executable name 
-bin_PROGRAMS = hello
+# Use the flags previously defined for debug-enabled assembly
+AM_ASFLAGS = --gstabs
 
+# Define the standalone assembly binaries to build
+bin_PROGRAMS = hello funk_test main_asm
+
+# Source mappings for each binary
 hello_SOURCES = hello.s
-hello_LDFLAGS = -nostartfiles
+funk_test_SOURCES = ../funk.s
+main_asm_SOURCES = main.s fileio.s gpiomem.s mainmem.s shift.s
 
-hello_LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-
-AM_CCASFLAGS = $(ASFLAGS)
+# Clean up any leftover manual build artifacts
+CLEANFILES = $(OBJ) $(EXEC) prompt.txt
