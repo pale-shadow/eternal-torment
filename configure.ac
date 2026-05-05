@@ -37,8 +37,8 @@ dnl IMPORTANT: 'Makefile' must be listed first to generate the root Makefile.
 dnl All sub-paths now point to the 'src/' directory structure.
 AC_CONFIG_FILES([
     Makefile
-    src/Makefile
     src/ass/Makefile
+    src/ass-intel-x86/Makefile
     src/cube1/Makefile
     src/freeglut/Makefile
     src/SpinningCube/Makefile
